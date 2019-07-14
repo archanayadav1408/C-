@@ -3,15 +3,16 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 
 #include<iostream>
+using namespace std;
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // GLOBAL VARIABLES.
 /////////////////////////////////////////////////////////////////////////////////////////
-
-int a = 2;                                  // inetialized variable.
-int b = 3;                                  // inetialized variable.
-int sum = a + b;                            // inetialized variable for sum.
-int mul = a * b;                            // inetialized variable for multiplication.
+ 
+string username;                            // string.
+string password;                            // string.
+int sum;                                    // uninetialized variable for sum.
+int mul;                                    // uninetialized variable for multiplication.
 int c;                                      // uninetialize variable.
 int d;                                      // uninetialize variable.
 int e;                                      // uninetialize variable.
@@ -26,7 +27,7 @@ void line_change(int line_change_counter)
             {
                 for (int i = 0; i <= line_change_counter; i++)
                     {
-                        std::cout << std:: endl;                        // change to next line.
+                        cout << endl;                        // change to next line.
                     }
             }    
         return ;
@@ -39,7 +40,7 @@ void line(int line_type, int line_counter)
             {
                 for (int i = 1; i <= line_counter; i++)
                     {
-                        std::cout << "#########################################################################################################";
+                        cout << "#########################################################################################################";
                         line_change(0);
                     }
             }
@@ -47,7 +48,7 @@ void line(int line_type, int line_counter)
             {
                 for (int i = 1; i <= line_counter; i++)
                     {
-                        std::cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";                        // change to next line.
+                        cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";                        // change to next line.
                         line_change(0);
                     }
             }
@@ -56,7 +57,7 @@ void line(int line_type, int line_counter)
             {
             for (int i = 1; i <= line_counter; i++)
                     {
-                        std::cout << "---------------------------------------------------------------------------------------------------------";                        // change to next line.
+                        cout << "---------------------------------------------------------------------------------------------------------";                        // change to next line.
                         line_change(0);
                     }
             }
@@ -65,7 +66,7 @@ void line(int line_type, int line_counter)
             {
                 for (int i = 1; i <= line_counter; i++)
                     {
-                        std::cout << ".........................................................................................................";                        // change to next line.
+                        cout << ".........................................................................................................";                        // change to next line.
                         line_change(0);  
                     }
             }
@@ -79,14 +80,18 @@ void line(int line_type, int line_counter)
 
 void authentication_()
     {
-        std::cout << "PROJECT KINGS-EMPIRE";            // game name printed.
-        line_change(1);
+        cout << "PROJECT KINGS-EMPIRE";            // game name printed.
+        line_change(0);
 
         // prompt for username and password starts here.
-        std::cout << "Enter your username : ";
+        cout << "Enter your username : ";
+        cin >> username;
+        cout << "Enter your password : ";
+        cin >> password;
         line_change(0);
-        std::cout << "Enter your password : ";
         // prompt code ends here.
+
+        
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -97,6 +102,7 @@ int main()
     {
         line(1, 2);
         authentication_();
+        line(1, 2);
         return (0);
     }
 
